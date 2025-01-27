@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platos Típicos de Ecuador</title>
+</head>
+<body>
+    <h1>Platos Típicos de Ecuador</h1>
+    <ul>
+        {% for plato in platos %}
+        <li>{{ plato.nombre }} - {{ plato.region }}: ${{ plato.precio_estimado }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
