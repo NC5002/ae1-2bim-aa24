@@ -13,53 +13,33 @@ Django 4.x
 HTML
 
 Instrucciones de instalación
-Clona este repositorio en tu máquina local:
-git clone https://github.com/tu_usuario/tu_repositorio.git
+1. Haz un fork a este repositorio
 
-Navega al directorio del proyecto:
-cd tu_repositorio
+2. Navega al directorio del proyecto:
+cd proyecto_ecuador
 
-Crea un entorno virtual (opcional pero recomendado):
-python -m venv env
-
-Activa el entorno virtual:
-En Windows:
-.\env\Scripts\activate
-
-En Mac/Linux:
-source env/bin/activate
-
-
-Instala las dependencias del proyecto:
+3. Instala las dependencias del proyecto:
 pip install -r requirements.txt
 
-Realiza las migraciones de la base de datos:
+4. Realiza las migraciones de la base de datos:
 python manage.py migrate
 
-Ejecuta el servidor de desarrollo:
+5. Ejecuta el servidor de desarrollo:
 python manage.py runserver
 
-Accede a la aplicación en tu navegador:
-arduino
-Copiar
-Editar
+6. Accede a la aplicación en tu navegador:
 http://127.0.0.1:8000/
 
-Uso del Admin
+7. Uso del Admin
 Para acceder a la interfaz administrativa, dirígete a:
-arduino
-Copiar
-Editar
 http://127.0.0.1:8000/admin
 
-Crea un superusuario si no lo has hecho aún:
+8. Crea un superusuario si no lo has hecho aún:
 python manage.py createsuperuser
 Ingresa con tus credenciales y podrás gestionar los Platos Típicos de Ecuador desde la interfaz de administración.
 
-Estructura del Proyecto
-bash
-Copiar
-Editar
+9. Estructura del Proyecto:
+
 proyecto_ecuador/
 │
 ├── primer_parte/                 # Carpeta de la aplicación Django
@@ -84,4 +64,4 @@ proyecto_ecuador/
 
 
 
-Si deseas contribuir a este proyecto, siéntete libre de hacer un fork y enviar un pull request con mejoras o correcciones.
+(Si deseas contribuir a este proyecto, siéntete libre de hacer un fork y enviar un pull request con mejoras o correcciones.)
