@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
     background-color: #f8f9fa;
-    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    font-family: 'Poppins', sans-serif;
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -20,7 +20,7 @@ body {
 
 /* Título principal */
 h1 {
-    color: #2c3e50; /* Azul oscuro */
+    color: #2c3e50;
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
@@ -34,58 +34,109 @@ h1 {
     margin-bottom: 15px;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
+    padding: 0; /* Eliminamos el padding para controlarlo internamente */
     background-color: #fff;
+    transition: all 0.3s ease;
 }
 
 .list-group-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-color: #3498db; /* Azul brillante */
+    border-color: #3498db;
 }
 
-/* Botones */
-.btn {
-    font-size: 0.9rem;
+/* Encabezado del plato */
+.plato-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+}
+
+.plato-header:hover {
+    background-color: #f8f9fa;
+}
+
+/* Información del plato */
+.plato-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.plato-nombre {
+    font-size: 1.2rem;
     font-weight: 600;
+    color: #2c3e50;
+}
+
+.plato-region {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.plato-precio {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+/* Botón de agregar al carrito */
+.btn-agregar {
+    background-color: #3498db;
+    border: none;
+    color: white;
     padding: 8px 16px;
     border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.btn-primary {
-    background-color: #3498db; /* Azul brillante */
-    border: none;
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background-color: #2980b9; /* Azul más oscuro */
+.btn-agregar:hover {
+    background-color: #2980b9;
     transform: translateY(-2px);
 }
 
-.btn-success {
-    background-color: #2ecc71; /* Verde brillante */
-    border: none;
-    color: #fff;
+/* Descripción del plato */
+.plato-descripcion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.3s ease;
+    padding: 0 20px;
+    background-color: #f8f9fa;
+    border-radius: 0 0 8px 8px;
 }
 
-.btn-success:hover {
-    background-color: #27ae60; /* Verde más oscuro */
-    transform: translateY(-2px);
+.plato-descripcion.active {
+    max-height: 200px; /* Ajusta según el contenido */
+    padding: 15px 20px;
 }
 
-/* Efectos adicionales */
-@keyframes fadeIn {
+.plato-descripcion p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Efecto de sombra al expandir */
+.plato-descripcion.active {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animación para el botón de agregar */
+@keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-10px);
     }
     to {
         opacity: 1;
@@ -93,27 +144,16 @@ h1 {
     }
 }
 
-.container {
-    animation: fadeIn 0.8s ease-out;
+.plato-descripcion.active + .btn-agregar-container {
+    animation: slideDown 0.3s ease-out;
 }
 
-/* Mejoras en el texto */
-.plato-nombre {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #2c3e50; /* Azul oscuro */
-}
-
-.plato-region {
-    font-size: 0.9rem;
-    color: #7f8c8d; /* Gris oscuro */
-    font-style: italic;
-}
-
-.plato-precio {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #27ae60; /* Verde brillante */
+/* Contenedor del botón de agregar */
+.btn-agregar-container {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-radius: 0 0 8px 8px;
 }
 
 /* Estilos para el botón de eliminar */
@@ -121,14 +161,14 @@ h1 {
     background-color: #e74c3c; /* Rojo */
     border: none;
     color: white;
-    padding: 8px 12px;
+    padding: 8px 16px;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 1;
 }
 
 .btn-eliminar:hover {
