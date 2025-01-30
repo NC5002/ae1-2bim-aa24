@@ -1,67 +1,64 @@
-Proyecto: Platos Típicos de Ecuador - Django
-Descripción
-Este proyecto es una aplicación web creada con el framework Django, donde se muestran algunos de los platos típicos de Ecuador. La aplicación permite gestionar los datos de los platos a través de un panel de administración, mostrando información como el nombre del plato, su descripción, la región de origen y el precio estimado.
+# Proyecto: Platos Típicos de Ecuador - Django
 
-Características
-Modelos: Se utiliza el modelo PlatoTipico para almacenar información sobre los platos típicos de Ecuador.
-Admin: La aplicación usa la interfaz administrativa de Django para gestionar los platos.
-Vistas y Templates: Se muestra una lista de los platos en la página principal mediante vistas y templates en HTML.
-Visualización: Los platos se presentan con su nombre, región y precio estimado.
-Tecnologías Usadas
-Python 3.x
-Django 4.x
-HTML
+## Descripción
+Este proyecto es una aplicación web desarrollada con el framework Django, diseñada para mostrar y gestionar algunos de los platos típicos de Ecuador. La aplicación cuenta con dos interfaces principales: una **vista para el cliente**, donde los usuarios pueden explorar los platos disponibles y realizar pedidos, y una **vista de administración**, donde se gestionan los datos de los platos.
 
-Instrucciones de instalación
-1. Haz un fork a este repositorio
+La vista del cliente ha sido diseñada con un enfoque visual atractivo, implementando **CSS** para mejorar la experiencia del usuario. Los clientes pueden ver una lista de platos con detalles como nombre, descripción, región de origen y precio estimado, lo que facilita la exploración y selección de platos.
 
-2. Navega al directorio del proyecto:
-cd proyecto_ecuador
+## Características
+- **Modelos**: Se utiliza el modelo `PlatoTipico` para almacenar información sobre los platos típicos de Ecuador.
+- **Vistas**:
+  - **Cliente**: Una vista bonita y funcional, accesible en el puerto principal (`http://127.0.0.1:8000/`), donde los usuarios pueden ver la lista de platos y realizar pedidos.
+  - **Administrador**: Una interfaz de gestión accesible en `http://127.0.0.1:8000/admin/`, donde se pueden agregar, editar o eliminar platos.
+- **Diseño**: Se ha implementado **CSS** para mejorar la presentación de la vista del cliente, ofreciendo una experiencia visual agradable y profesional.
+- **Funcionalidades**:
+  - Visualización de platos con nombre, región, descripción y precio.
+  - Panel de administración para gestionar los platos.
+  - Interfaz intuitiva y fácil de usar tanto para clientes como para administradores.
 
-3. Instala las dependencias del proyecto:
-pip install -r requirements.txt
+## Tecnologías Usadas
+- **Python 3.x**
+- **Django 4.x**
+- **HTML**
+- **CSS**
 
-4. Realiza las migraciones de la base de datos:
-python manage.py migrate
+## Instrucciones de Instalación
+Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local:
 
-5. Ejecuta el servidor de desarrollo:
-python manage.py runserver
+1. **Haz un fork** de este repositorio.
+2. **Navega al directorio del proyecto**:
+   ```bash
+   cd proyecto_ecuador
+   ```
+3. **Instala las dependencias** del proyecto:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **Realiza las migraciones** de la base de datos:
+   ```bash
+   python manage.py migrate
+   ```
+5. **Ejecuta el servidor de desarrollo**:
+   ```bash
+   python manage.py runserver
+   ```
+6. **Accede a la aplicación** en tu navegador:
+   - **Vista del Cliente**: `http://127.0.0.1:8000/`
+   - **Vista del Administrador**: `http://127.0.0.1:8000/admin/`
 
-6. Accede a la aplicación en tu navegador:
-http://127.0.0.1:8000/
+7. **Configura el superusuario** (si no lo has hecho aún):
+   ```bash
+   python manage.py createsuperuser
+   ```
+   Ingresa con tus credenciales para acceder al panel de administración y gestionar los platos típicos.
 
-7. Uso del Admin
-Para acceder a la interfaz administrativa, dirígete a:
-http://127.0.0.1:8000/admin
+## Uso del Administrador
+Para gestionar los platos típicos, accede a la interfaz administrativa en:
+```
+http://127.0.0.1:8000/admin/
+```
+Desde aquí, podrás agregar, editar o eliminar platos, así como gestionar otros aspectos de la aplicación.
 
-8. Crea un superusuario si no lo has hecho aún:
-python manage.py createsuperuser
-Ingresa con tus credenciales y podrás gestionar los Platos Típicos de Ecuador desde la interfaz de administración.
+## Contribuciones
+Si deseas contribuir a este proyecto, ¡eres bienvenido! Haz un fork del repositorio, realiza tus mejoras o correcciones, y envía un **pull request**. Agradecemos cualquier aporte que ayude a mejorar esta aplicación.
 
-9. Estructura del Proyecto:
-
-proyecto_ecuador/
-│
-├── primer_parte/                 # Carpeta de la aplicación Django
-│   ├── migrations/               # Migraciones de la base de datos
-│   ├── __init__.py
-│   ├── admin.py                  # Registro de los modelos en el Admin
-│   ├── apps.py
-│   ├── models.py                 # Definición del modelo PlatoTipico
-│   ├── tests.py
-│   ├── views.py                  # Lógica de la vista
-│   └── urls.py                   # Configuración de URLs
-│
-├── proyecto_ecuador/             # Carpeta del proyecto Django
-│   ├── __init__.py
-│   ├── settings.py               # Configuraciones generales del proyecto
-│   ├── urls.py                   # URLs principales
-│   ├── wsgi.py
-│   └── asgi.py
-│
-├── manage.py                     # Herramienta de línea de comandos de Django
-└── requirements.txt              # Dependencias del proyecto
-
-
-
-(Si deseas contribuir a este proyecto, siéntete libre de hacer un fork y enviar un pull request con mejoras o correcciones.)
