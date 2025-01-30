@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 class PlatoTipico(models.Model):
     nombre = models.CharField(max_length=100)
@@ -8,3 +9,8 @@ class PlatoTipico(models.Model):
 
     def __str__(self):
         return self.nombre + " - "+ " $"+ str(self.precio_estimado) 
+    
+    def clean(self):
+        # Asegurarse de que el precio sea positivo
+        if self.precio_estimado < 0:
+            raise ValidationError("El precio estimado debe ser un número positivo.") 
